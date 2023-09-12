@@ -2,3 +2,104 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* ... (rest of the previous code) */
+
+
+.navbar-toggler:focus + .navbar-collapse {
+    display: block; /* Show the navbar content when the toggle button is focused */
+} 
+.navbar-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+}
+
+.navbar-collapse.show {
+    max-height: 500px; /* This value should be larger than the expected maximum height of your navbar content */
+}
+
+.nav-item {
+    margin: 0 5px;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover {
+    transform: translateX(10px); /* Moves to the right on hover */
+}
+
+.navbar {
+    background-color: transparent !important; /* !important might be needed to override Bootstrap's default styles */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030; /* This ensures the navbar stays above other content */
+    transition: all 0.5s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid lightgrey;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+    color: black !important; /* Make the text color black */
+}
+
+/* .navbar-toggler {
+    border-color: black; /* This will set the border color of the button if any */
+    /* color: black;
+    background-color: black; */
+/* } */ 
+
+#navbarToggle {
+    background: linear-gradient(to bottom, #2c3e50, #4c6d8c);
+    color: #3498db;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease; /* transition for hover effect and click effect */
+    padding: 10px 15px; /* increased padding for a larger button */
+    border-radius: 5px; /* rounded corners */
+}
+
+#navbarToggle i.fas.fa-bars {
+    font-size: 24px; /* increased icon size */
+}
+
+#navbarToggle:hover, #navbarToggle:focus {
+    background: linear-gradient(to bottom, #1a2836, #3b5775);
+    transform: scale(1.05); /* button enlarges slightly on hover/focus */
+}
+
+#navbarToggle:active {
+    background: linear-gradient(to bottom, #0e141c, #2a3b50);
+    transform: scale(0.95); /* button shrinks slightly when clicked */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* reduced shadow for a pressed effect */
+}
+
+
+
+
+
