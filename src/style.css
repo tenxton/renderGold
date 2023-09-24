@@ -1,4 +1,115 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+#navbar a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#navbar a:hover {
+    color: #ffcc00;
+    transform: translateY(-2px) scale(1.1);
+}
+
+#navbarToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+}
+
+#navbarNav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: 999;
+}
+
+#navbarNav a {
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    border-top: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#navbarNav a:hover {
+    color: #ffcc00;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-4px) scale(1.1);
+}
+
+@media (max-width: 767px) {
+    #navbarNav a:hover {
+        transform: translateX(50px) scale(1.1);
+    }
+}
+
+#navbar.expanded #navbarNav {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.hero {
+    margin-top: 70px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+    #navbarNav {
+        transform: scaleY(1);
+        opacity: 1;
+        position: static;
+        flex-direction: row;
+    }
+
+    #navbarToggle {
+        display: none;
+    }
 }
